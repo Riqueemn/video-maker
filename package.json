@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Riqueemn/video-maker/issues"
   },
-  "homepage": "https://github.com/Riqueemn/video-maker#readme"
+  "homepage": "https://github.com/Riqueemn/video-maker#readme",
+  "dependencies": {
+    "algorithmia": "^0.3.10",
+    "sbd": "^1.0.15"
+  }
 }
