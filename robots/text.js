@@ -4,8 +4,10 @@ const sbd = require('sbd')
 
 const watsonApiKey = require('../credentials/watson-nlu.json').apiKey
 var NaturalLanguageUnderstandingV1 = require('../node_modules/watson-developer-cloud/natural-language-understanding/v1.js');
+
+const state = require('./state.js')
  
-var nlu = new NaturalLanguageUnderstandingV1({
+const nlu = new NaturalLanguageUnderstandingV1({
     iam_apikey: watsonApiKey,
     username: 'apikey',
     password: 'RgoRxUvI7A29mgOE6XUq4_qVUU9f_E-XMuc4o3QzUZnK',
@@ -13,12 +15,16 @@ var nlu = new NaturalLanguageUnderstandingV1({
     url: 'https://gateway.watsonplatform.net/natural-language-understanding/api/'
   })
   
-async function robot(content){
+async function robot(){
+    const content = state.load()
+    
     await fetchContentFromWikipedia(content)
     sanitizedContent(content)
     breakContentIntoSentences(content)
     limitMaximumSentences(content)
     await fetchKeywordsOfAllSentences(content)
+
+    state.save(content)
 
     async function fetchContentFromWikipedia(content){
         const algorithmiaAutenticad = algorithmia(apiKeyAlgorithmia)

@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Riqueemn/video-maker#readme",
   "dependencies": {
+    "@types/readline-sync": "^1.4.3",
     "algorithmia": "^0.3.10",
+    "file-system": "^2.2.2",
     "sbd": "^1.0.15",
     "watson-developer-cloud": "^4.0.1"
   }
