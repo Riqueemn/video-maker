@@ -21,6 +21,7 @@
     "algorithmia": "^0.3.10",
     "file-system": "^2.2.2",
     "googleapis": "^42.0.0",
+    "image-downloader": "^3.5.0",
     "sbd": "^1.0.15",
     "watson-developer-cloud": "^4.0.1"
   }
