@@ -90,7 +90,7 @@ async function robot(){
 
             gm()
             .in(inputFile)
-        /*.out("(")
+        .out("(")
           .out("-clone")
           .out("0")
           .out("-background", "white")
@@ -107,7 +107,7 @@ async function robot(){
         .out("-gravity", "center")
         .out("-compose", "over")
         .out("-composite")
-        .out("-extent", `${width}x${height}`)*/
+        .out("-extent", `${width}x${height}`)
         .write(outputFile, (error) => {
             if(error){
                 return reject(error)
